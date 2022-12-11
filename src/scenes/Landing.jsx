@@ -1,5 +1,7 @@
 import useMediaQuery from "../hooks/useMediaQuery";
 import { motion } from "framer-motion";
+import SocialMediaIcons from "../components/SocialMediaIcons";
+
 const Landing = ({ setSelectedPage }) => {
     const isAboveLarge = useMediaQuery("(min-width: 1060px)");
   return (
@@ -8,7 +10,8 @@ const Landing = ({ setSelectedPage }) => {
       className="md:flex md:justify-between md:items-center gap-16 md:h-full py-10"
       >
     {/* IMAGE SECTION */}
-    <div className="basis-3/5 z-10 mt-16 md:mt-32 flex justify-center md:order-2">
+    <div className="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-1000
+      basis-3/5 z-10 mt-16 md:mt-32 flex justify-center md:order-2">
     {isAboveLarge ? (
       <div
         className="relative z-0 ml-20 before:absolute before:-top-20 before:-left-20 before:rounded-t-[400px]
@@ -16,7 +19,8 @@ const Landing = ({ setSelectedPage }) => {
       >
         <img
           alt="profile"
-          className="hover:filter hover:saturate-200 transition duration-500 z-10 w-full max-w-[360px] md:max-w-[480px] rounded-full"
+          className="transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-1000
+          z-10 w-full max-w-[360px] md:max-w-[480px] rounded-full"
           src="assets/profile-photo.png"
         />
       </div>
@@ -30,13 +34,13 @@ const Landing = ({ setSelectedPage }) => {
     )}
   </div>
                   
-  <div className="z-30 basis-2/5 mt-12 md:mt-32">
+  <div className="z-30 basis-2/5 mt-12 md:mt-32 md:ml-10">
         {/* HEADINGS */}
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.5 }}
-          transition={{ duration: 0.5 }}
+          transition={{delay: 0.4, duration: 0.5 }}
           variants={{
             hidden: { opacity: 0, x: -50 },
             visible: { opacity: 1, x: 0 },
@@ -53,9 +57,22 @@ const Landing = ({ setSelectedPage }) => {
             </span>
           </p>
 
-          <p className="mt-10 mb-7 text-center md:text-start">
+          <p className="mt-10 mb-7 text-center md:text-start text-lg">
             Graphics design & SEO expert.
           </p>
+        </motion.div>
+        <motion.div
+          className="flex mt-5 justify-center md:justify-start"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ delay: 0.4, duration: 0.5 }}
+          variants={{
+            hidden: { opacity: 0, x: -50 },
+            visible: { opacity: 1, x: 0 },
+          }}
+        >
+          <SocialMediaIcons />
         </motion.div>
         </div>
   </section>

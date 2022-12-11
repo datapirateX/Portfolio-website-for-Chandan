@@ -10,7 +10,9 @@ body,
 .app {
   height: 100%;
   background-color: #f0e6e6;
-  @apply text-blue-600;
+  font-family: 'Neue Haas Display', sans-serif;
+  @apply text-[#131520];
+
 }
 
 
